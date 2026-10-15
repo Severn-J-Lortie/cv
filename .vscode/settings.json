@@ -1,0 +1,24 @@
+{
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (pdflatex)",
+            "tools": ["cv-pdflatex"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "cv-pdflatex",
+            "command": "latexmk",
+            "args": [
+                "-pdf",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-outdir=%OUTDIR%",
+                "-auxdir=%AUXDIR%",
+                "%DOC%"
+            ]
+        }
+    ]
+}
