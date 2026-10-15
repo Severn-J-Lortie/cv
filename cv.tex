@@ -1,152 +1,324 @@
 \documentclass[letterpaper,10pt]{article}
 \usepackage{cv}
 
-% Enter your name to populate PDF metadata:
-\hypersetup{pdftitle={Moritz-Maria von Igelfeld's CV}}
+% ------------------------------------------------------------
+% Personal information
+% ------------------------------------------------------------
 
-% Enter your email address:
-\cvfoot{C}{\href{mailto:igelfeld@regensburg.edu}{igelfeld@regensburg.edu}}
+\hypersetup{
+  pdftitle={Severn Lortie's CV},
+  pdfauthor={Severn Lortie}
+}
 
-% Enter your website's URL:
-\cvfoot{L}{\href{https://vonigelfeld.org/}{vonigelfeld.org}}
+\cvfoot{C}{\href{mailto:severn.lortie@queensu.ca}
+                   {severn.lortie@queensu.ca}}
 
-% Enter date:
+\cvfoot{L}{\href{https://www.linkedin.com/in/severn-lortie/}{linkedin.com/in/severn-lortie}}
+
 \cvfoot{R}{October 2026}
+
+% ------------------------------------------------------------
+% Optional descriptions beneath an entry
+% ------------------------------------------------------------
+
+% Short paragraph beneath the current item.
+% Usage: \cvdescription{Your description here.}
+\newcommand{\cvdescription}[1]{%
+  \par\nopagebreak\smallskip
+  \noindent #1\par
+}
+
+% Compact bullets beneath the current item.
+% Uses a separate list so it does not change the template's
+% formatting for the main entries.
+%
+% Usage:
+% \begin{cvdetails}
+%   \item First contribution.
+%   \item Second contribution.
+% \end{cvdetails}
+\newenvironment{cvdetails}
+  {%
+    \begin{list}{\textbullet}{%
+      \setlength{\leftmargin}{1.3em}%
+      \setlength{\rightmargin}{0pt}%
+      \setlength{\labelwidth}{0.6em}%
+      \setlength{\labelsep}{0.4em}%
+      \setlength{\itemindent}{0pt}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\topsep}{3pt}%
+      \setlength{\partopsep}{0pt}%
+      \setlength{\itemsep}{2pt}%
+      \setlength{\parsep}{0pt}%
+    }%
+  }
+  {\end{list}}
 
 \begin{document}
 
-% Enter your name:
-\name{moritz-maria von igelfeld}
+\name{Severn Lortie}
 
-% Fill out the different blocks of the CV:
-\block{employment}
-
-\begin{itemize}
-\item University of Regensburg \sep Professor of Philology \sep since 1990
-\item University of Regensburg \sep Associate Professor of Romance Philology \sep 1982--1990
-\item University of Heidelberg \sep Assistant Professor of Romance Philology\sep 1976--1982
-\end{itemize}
-
-\block{visits}
-
-\begin{itemize}
-\item University of Cambridge \sep Faculty of Modern and Medieval Languages \sep 2004--2005
-\item All Souls College, Oxford \sep Visiting Fellow \sep Summer 1991
-\end{itemize}
+% ------------------------------------------------------------
+% Education
+% ------------------------------------------------------------
 
 \block{education}
 
 \begin{itemize}
-\item University of Munich \sep PhD in Philology \sep 1975\\
-Dissertation title: \textit{Portuguese Irregular Verbs}\\
-Advisor: Professor Dr Dieter Vogelsang
-\item University of Heidelberg \sep MA in Romance Languages \sep 1972
-\item University of Wiesbaden \sep BA in Classical Studies \sep 1970
+
+\item
+  \textbf{MASc in Robotics} \sep September 2025--Present\\
+  Smith Engineering, Queen's University, Kingston\\\
+  Supervisor: Dr. Jonathan Gammell\\
+  Thesis: \textit{An Autonomous Sailboat and Informative Path Planner for Environmental Monitoring}
+
+\item
+  \textbf{Bachelor of Computer Engineering} \sep September 2020--April 2025\\
+  Smith Engineering, Queen's University, Kingston
 \end{itemize}
 
-\block{articles}
+% ------------------------------------------------------------
+% Research experience
+% ------------------------------------------------------------
+
+\block{research experience}
+
+\begin{itemize}
+
+\item
+  \textbf{MASc Researcher} \sep September 2025--Present\\
+  \href{https://robotic-esp.com/}{Robotic ESP Lab}, Queen's University, Kingston \\
+  Supervisor: Dr. Jonathan Gammell
+
+  \begin{cvdetails}
+    \item Designed and deployed the complete control, actuation, and motion-planning stack for an autonomous sailboat
+    \item Validated the system through 6 on-water field tests in Lake Ontario
+    \item Achieved reliable waypoint following and optimal sail angle control, hitting 8/8 test waypoints in a summer 2026 field test
+    \item Designed and evaluated a sampling-based informative path planning algorithm that integrated sorted search heuristics for better performance over existing baselines
+  \end{cvdetails}
+
+\item
+  \textbf{Undergraduate Research Assistant}
+  \sep May 2025--September 2025\\
+  Robotic ESP Lab, Queen's University, Kingston
+
+  \begin{cvdetails}
+    \item Programmed a software bridge to ingest data from NMEA 2000, a common protocol for marine sensors, into the Robot Operating System (ROS). This enabled the development of the autonomous sailboat for my Master's research. The code was open-sourced for other researchers to use
+  \end{cvdetails}
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% Work experience
+% List jobs and internships with the most recent first.
+% ------------------------------------------------------------
+
+\block{work experience}
+
+\begin{itemize}
+
+\item
+  \textbf{Software Engineering Intern} \sep May 2023--August 2024\\
+  Distributive \sep Kingston, Ontario
+  
+  \begin{cvdetails}
+    \item Built and presented an LLM inference demo on Distributive's parallel-computing platform to Nokia's CTO and AI/HPC lead, contributing to follow-up meetings and a collaboration.  
+    \item Co-developed, from scratch, the company’s Python API for its core parallel-computing platform in a two-engineer effort using an embedded JavaScript-in-Python runtime; achieved feature parity with the native JavaScript API and supported several non-trivial workloads.
+    \item Designed a non-blocking WebSocket bridge in C++ from the embedded V8 workers to the Chrome DevTools Protocol; the resulting debugger was used to fix critical product bugs.
+  \end{cvdetails}
+
+% Duplicate the entry above for additional jobs or internships.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% Engineering design teams and projects
+% ------------------------------------------------------------
+
+\block{engineering design teams and projects}
+
+\begin{itemize}
+
+\item
+  \textbf{Ingenuity Labs Racing Team} \sep RoboRacer/F1Tenth \sep September 2026--Present\\
+  Planning Lead, Queen's University
+
+  \begin{cvdetails}
+    \item Participated in three tests of the car and worked to diagnose complex fault, intermittent failure in the motor controller
+    \item Unified team workflow for track mapping and race line generation, allowing testing to be conducted without large setup overhead
+    \item Worked with team to diagnose fault that caused car to crash during previous competition, enabling more reliable operation
+  \end{cvdetails}
+
+\item
+  \textbf{Reducing High Performance Computing Power Consumption with a Proactive CPU Governor}
+  \sep Capstone Project \sep September 2024\\
+  Queen's Univeristy
+
+  \begin{cvdetails}
+    \item Worked with team of three other students to design a custom CPU frequency governor to increase the power efficiency of representative HPC workloads. Testing on a scientific proxy application called Quicksilver, the team was able to achieve a 4.6\% decrease in runtime and 7.4\% decrease in total energy consumption.
+    \item My role was to design and program the governor and create the final project poster.
+  \end{cvdetails}
+
+% Duplicate an entry above for additional teams or projects.
+
+\end{itemize}
+
+% ------------------------------------------------------------
+% Publications
+% Remove this section if you have no publications to list.
+% Clearly identify accepted or submitted manuscripts.
+% ------------------------------------------------------------
+
+\block{publications}
 
 \begin{etaremune}
-\item \href{https://pascalmichaillat.org/hugo-website/papers/paper3/}{Your Inner Hedgehog} \with{H. Schreiber-Ziegler}\\
-\textit{Journal of Socio-Experimental Psychology} \sep 2021
-\item \href{https://pascalmichaillat.org/hugo-website/papers/paper1/}{Unusual Uses For Olive Oil} \with{D. Unterholzer}\\
-\textit{Journal of Oleic Science} \sep 2013
-\item \href{https://pascalmichaillat.org/hugo-website/papers/paper2/}{The Finer Points of Sausage Dogs} \with{F. Prinzel}\\
-\textit{Journal of Canine Science} \sep 2004
-\item Syntactical Ambiguity in Portuguese Texts: $\alpha(p)<\beta(i)^2$ \with{F. Prinzel \& D. Unterholzer}\\
-\textit{Journal of Romance Philology} \sep 1994
-\item The Use of the Subjunctive in $\mathcal{A}$-$\mathcal{B}$ Romance Legal Documents\\
- \textit{Philological Review} \sep 1993
-\item Anomalies in Verb Conjugation: A Case Study in $\mathbb{H}$-Lusitanian Dialects\\
-\textit{Romance Linguistics Quarterly} \sep 1992
-\item The Influence of Moorish Loanwords on Early Spanish Grammar\\
-\textit{Iberian Language Studies} \sep 1990
-\item Diachronic Patterns in Iberian Romance Prepositions\\
-\textit{Transactions of the Philological Society} \sep 1989
-\item Orthographic Variation in Early Portuguese Manuscripts\\
-\textit{Medieval Linguistic Studies} \sep 1988
-\item Latin Influence on Structures in Medieval Castilian\\
-\textit{Romance Philology Annual} \sep 1986
-\item Lexeme Frequency in 13th Century Galician Texts \with{P. P. Boisseau}\\
-\textit{Journal of Historical Linguistics} \sep 1982
-\item Etymological Layering in Legal Vocabulary of Medieval Aragon \with{A. Martinique}\\
-\textit{Iberian Philological Review} \sep 1980
+
+\item
+  Sanindie Silva, David Courtis, Jax Hodgkinson, and \textbf{Severn Lortie}.
+  ``Creating a Corn Yield Estimator: A Deep Learning Approach via UAV Imagery''\\
+  \textit{Canadian Undergraduate Conference on AI (CUCAI)} \sep 2023
+  % Add volume, pages, and DOI as appropriate.
+  % For unpublished work, explicitly state its status:
+  % \sep Accepted
+  % \sep Submitted
+
 \end{etaremune}
 
-\block{preprints}
+% ------------------------------------------------------------
+% Presentations and posters
+% ------------------------------------------------------------
+
+\block{presentations and posters}
 
 \begin{itemize}
-\item Uncharted Inflections: Proto-Romance Conjugation Patterns Reconsidered \with{F. Prinzel}
-\item Philological Evidence of a Lost Dialect in 12th Century Galicia
-\item Verb Declension Errors in Illuminated Manuscripts \with{H. Schreiber-Ziegler}
+
+\item
+  \textbf{Severn Lortie}, Meredith Scharlach, and Jonathan Gammell.
+  ``The Martin 16 Autonomous Sailboat''\\
+  Robotics and AI Symposium (RAIS) at Ingenuity Labs, Queen's University\\ October 2026
+  \sep Poster
+
+\item
+  Sanindie Silva, David Courtis, Jax Hodgkinson, and \textbf{Severn Lortie}.
+  ``Creating a Corn Yield Estimator: A Deep Learning Approach via UAV Imagery''\\
+  Canadian Undergraduate Conference on AI (CUCAI) \sep May 2023
+  \sep Oral presentation
+
 \end{itemize}
 
-\block{books}
+% ------------------------------------------------------------
+% Awards and scholarships
+% ------------------------------------------------------------
+
+\block{awards and scholarships}
 
 \begin{itemize}
-\item \href{http://www.alexandermccallsmith.com/book/portuguese-irregular-verbs}{\textit{Romance Philology in Crisis}}  \with{F. Prinzel \& D. Unterholzer}\\
-Cambridge University Press \sep 2024
-\item \href{https://pascalmichaillat.org/hugo-website/books/book1/}{\textit{Portuguese Irregular Verbs}}\\
-Regensburg University Press \sep 1997
+
+\item \textbf{Ontario Graduate Scholarship (OGS)} \sep \$15,000 \sep 2026-2027
+
+\item \textbf{Vector Institute Scholarship in AI} \sep \$17,500 \sep 2025-2026 
+
+\item \textbf{NSERC Undergraduate Student Research Award (USRA)} \sep \$9,000 \sep May 2025
+
+\item \textbf{Queen's University Principal's Scholarship} \sep \$4,000 \sep 2020
+
+\item
+  \textbf{2nd Place Paper}
+  \sep Canadian Undergraduate Conference in AI (CUCAI) \sep \$500 \sep May 2023
+
+\item
+  \textbf{1st Place Project}
+  \sep Amazon HACKTO Hackathon \sep \$1,000 \sep September 2022
 \end{itemize}
 
-\block{graduate courses}
+% ------------------------------------------------------------
+% Teaching and mentoring experience
+% ------------------------------------------------------------
+
+\block{teaching and mentoring experience}
 
 \begin{itemize}
-\item \href{https://pascalmichaillat.org/hugo-website/courses/course1/}{Lectures at the Villa of Reduced Circumstances} \sep University of Bogota
-\item Comparative Morphology of Romance Languages \sep University of Oxford
+
+\item
+  \textbf{Teaching Assistant} \sep Term 20XX\\
+  Course Code: Course Name, University Name
+
+  \begin{cvdetails}
+    \item Led [tutorials or laboratory sessions] covering [topics].
+    \item Supported students with [technical concepts,
+          experiments, or assignments].
+  \end{cvdetails}
+
+\item
+  \textbf{Mentoring Role} \sep 20XX--20XX\\
+  Program or Organization Name
+
+  \cvdescription{
+    Mentored [students or participants] in [subject or activity],
+    helping them [specific responsibility or outcome].
+  }
+
 \end{itemize}
 
-\block{undergraduate courses}
+% ------------------------------------------------------------
+% Technical skills
+% Keep only categories relevant to your background.
+% ------------------------------------------------------------
+
+\block{technical skills}
 
 \begin{itemize}
-\item \href{https://pascalmichaillat.org/hugo-website/courses/course2/}{Profanity in Early Irish} \with{D. Vogelsang}\sep University of Munich
-\item Portuguese for Classicists \sep University of Heidelberg, University of Padua
+
+\item
+  \textbf{Programming:}
+  [Languages and relevant libraries]
+
+\item
+  \textbf{Modelling and simulation:}
+  [Software and methods]
+
+\item
+  \textbf{Experimental methods:}
+  [Measurement, instrumentation, and testing techniques]
+
+\item
+  \textbf{Design and fabrication:}
+  [CAD software, manufacturing processes, and equipment]
+
 \end{itemize}
 
-\block{data}
+% ------------------------------------------------------------
+% Leadership and service
+% Use this for club leadership, outreach, and service.
+% Keep technical design team work in the design teams section.
+% ------------------------------------------------------------
+
+\block{leadership and service}
 
 \begin{itemize}
-\item \href{https://pascalmichaillat.org/hugo-website/data/data1/}{List of Irregular Verbs Across Romance Languages} \with{P. O'Leary, F. Prinzel, W. Schoeffler-Henschell, D. Unterholzer, D. Vogelsang}
-\end{itemize}
 
-\block{software}
+\item
+  \textbf{Club or Organization Name} \sep 20XX--20XX\\
+  Executive or Leadership Role
 
-\begin{itemize}
-\item \href{https://github.com/pmichaillat/hugo-website}{Hugo Code for Academic Websites}
-\item \href{https://github.com/pmichaillat/latex-presentation}{LaTeX Code for Academic Presentations}
-\item \href{https://github.com/pmichaillat/latex-paper}{LaTeX Code for Academic Papers}
-\end{itemize}
+  \begin{cvdetails}
+    \item Organized [events, workshops, or initiatives]
+          for [audience].
+    \item Managed [budget, volunteers, partnerships,
+          or other responsibilities].
+  \end{cvdetails}
 
-\block{service}
+\item
+  \textbf{Outreach or Service Role}
+  \sep Organization Name \sep 20XX
 
-\begin{itemize}
-\item International Society of Philologists \sep Editorial Board \sep since 1995
-\item Journal of Obscure Grammars \sep Editor-in-Chief \sep 2001--2006
-\end{itemize}
+  \cvdescription{
+    Contributed to [activity] by [specific contribution].
+  }
 
-\block{grants}
+% Simple memberships can remain one-line entries:
+% \item Club Name \sep Member \sep 20XX--20XX
 
-\begin{itemize}
-\item German Research Foundation Grant for Portuguese Morphology Study\\
-€150,000 \sep 2002--2005
-\item European Philology Society Research Fellowship  \with{F. Prinzel}\\
-€75,000 \sep 1994--1996
-\end{itemize}
-
-\block{awards}
-
-\begin{itemize}
-\item Bavarian Order of Academic Distinction \sep 2010
-\item Golden Cross for Services to Romance Philology \sep 2000
-\item Heidelberg Least-Bad Teacher in Romance Languages \sep 1978
-\end{itemize}
-
-\block{memberships}
-
-\begin{itemize}
-\item International Association for the Advancement of Philology \sep since 2012
-\item German Philological Society \sep since 2010
 \end{itemize}
 
 \end{document}
